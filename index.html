@@ -66,38 +66,119 @@
     }
 
     .transparent-button {
+      position: relative;
       padding: 10px 20px;
       font-size: 18px;
       color: white;
-      background-color: rgba(255, 255, 255, 0); 
-      border: 2px solid white;
-      border-radius: 5px;
-      cursor: pointer;
       text-decoration: none; 
-      transition: background-color 0.3s, color 0.3s;
-      margin: 0; 
+      overflow: hidden; /* Prevent overflow of pseudo-element */
     }
 
-    .transparent-button:hover {
-      background-color: rgba(255, 255, 255, 0.2); 
-      color: #f0f0f0;
+    .transparent-button:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0; /* Position at the bottom of the button */
+      width: 100%;
+      height: 2px; /* Thickness of the underline */
+      background: white; /* Color of the underline */
+      transform: translateX(-50%) scaleX(0); /* Start as scaled down */
+      transition: transform 0.3s ease; /* Smooth transition for the scale */
     }
 
-    .transparent-button:active {
-      background-color: rgba(255, 255, 255, 0.5); 
+    .transparent-button:hover:before {
+      transform: translateX(-50%) scaleX(1); /* Expand the underline on hover */
     }
 
-    #toggle-button {
+    /* Hamburger Button Styles */
+    #hamburger-button {
       position: absolute;
       top: 20px; 
       left: 20px; 
-      padding: 10px;
-      font-size: 18px;
-      background-color: rgba(255, 255, 255, 0.5);
+      width: 30px;
+      height: 30px;
+      background: none;
       border: none;
-      border-radius: 5px;
       cursor: pointer;
       z-index: 2; 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    #hamburger-button div {
+      width: 100%;
+      height: 4px;
+      background: white;
+      transition: all 0.3s ease; /* Smooth transition */
+    }
+
+    /* Navigation Pane Styles */
+    #nav-pane {
+      position: fixed;
+      top: 0;
+      left: -100%; /* Fully off-screen */
+      width: 250px;
+      height: 100%;
+      background-color: #000000; /* Space black color */
+      color: white;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+      transition: left 0.9s ease; /* Smooth transition */
+      z-index: 3;
+    }
+
+    #nav-pane a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 10px 0;
+      position: relative; /* Required for the pseudo-element */
+    }
+
+    #nav-pane a:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0; /* Position at the bottom of the button */
+      width: 100%;
+      height: 2px; /* Thickness of the underline */
+      background: white; /* Color of the underline */
+      transform: translateX(-50%) scaleX(0); /* Start as scaled down */
+      transition: transform 0.3s ease; /* Smooth transition for the scale */
+    }
+
+    #nav-pane a:hover:before {
+      transform: translateX(-50%) scaleX(1); /* Expand the underline on hover */
+    }
+
+    /* Dropdown Styles */
+    .dropdown {
+      position: relative; 
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute; 
+      background-color: #000; 
+      min-width: 200px; 
+      z-index: 1; 
+    }
+
+    .dropdown-content a {
+      padding: 10px;
+      text-decoration: none; 
+      color: white; 
+      display: block; 
+    }
+
+    .dropdown-content a:hover {
+      background-color: #444; 
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block; 
     }
   </style>
 </head>
@@ -112,7 +193,23 @@
 
   <div id="exoplanets-overlay">EXOPLANETS</div>
 
-  <button id="toggle-button">Menu</button>
+  <button id="hamburger-button">
+    <div></div>
+    <div></div>
+    <div></div>
+  </button>
+
+  <div id="nav-pane">
+    <a href="page1.html">AR</a>
+    <a href="page2.html">Chatbot</a>
+    <div class="dropdown">
+      <a href="page3.html">Games/Quiz</a>
+      <div class="dropdown-content">
+        <a href="games.html">Games</a>
+        <a href="quiz.html">Quiz</a>
+      </div>
+    </div>
+  </div>
 
   <div class="button-container" id="button-container">
     <a href="page1.html" class="transparent-button">AR</a>
@@ -149,33 +246,46 @@
 
     typeSentence();
 
-    const toggleButton = document.getElementById('toggle-button');
-    const buttonContainer = document.getElementById('button-container');
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const navPane = document.getElementById('nav-pane');
 
-    let isOpen = false;
+    let isNavOpen = false;
 
-    toggleButton.addEventListener('click', (event) => {
+    hamburgerButton.addEventListener('click', (event) => {
       event.stopPropagation(); 
-      isOpen = !isOpen; 
-      buttonContainer.style.opacity = isOpen ? '1' : '0'; 
-      buttonContainer.style.visibility = isOpen ? 'visible' : 'hidden'; 
+      isNavOpen = !isNavOpen; 
+      navPane.style.left = isNavOpen ? '0' : '-100%'; // Slide in/out
     });
 
     document.addEventListener('click', () => {
-      if (isOpen) {
-        isOpen = false;
-        buttonContainer.style.opacity = '0'; 
-        buttonContainer.style.visibility = 'hidden'; 
+      if (isNavOpen) {
+        isNavOpen = false;
+        navPane.style.left = '-100%'; // Slide out
       }
     });
 
-    buttonContainer.addEventListener('click', (event) => {
+    navPane.addEventListener('click', (event) => {
       event.stopPropagation(); 
     });
   </script>
 
 </body>
 </html>
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
