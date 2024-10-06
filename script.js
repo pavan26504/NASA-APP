@@ -34,13 +34,13 @@ let isNavOpen = false;
 hamburgerButton.addEventListener('click', (event) => {
   event.stopPropagation(); 
   isNavOpen = !isNavOpen; 
-  navPane.style.left = isNavOpen ? '0' : '-100%'; // Slide in/out
+  navPane.style.right = isNavOpen ? '0' : '-100%'; // Slide in/out
 });
 
 document.addEventListener('click', () => {
   if (isNavOpen) {
     isNavOpen = false;
-    navPane.style.left = '-100%'; // Slide out
+    navPane.style.right = '-100%'; // Slide out
   }
 });
 
