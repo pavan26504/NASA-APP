@@ -6,6 +6,12 @@ body, html {
   font-family: Arial, sans-serif;
 }
 
+.sec-1 {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
 #background-video {
   position: absolute;
   top: 0;
