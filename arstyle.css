@@ -1,0 +1,139 @@
+/* Overall Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Clean, professional font */
+    background-color: #1a1a1a; /* Dark background to maintain the space-themed look */
+}
+
+.ar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    height: 60%;
+}
+
+/* Description Section */
+.desc {
+    background-color: #292b2c; /* Darker grey to keep the theme */
+    padding: 20px;
+    border-radius: 20px; /* Soft, rounded corners for a friendly feel */
+    width: 70%;
+    color: #ffffff; /* Light text for readability on dark background */
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Bright orange shadow for a fun pop */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 4px solid #ffcc00; /* Bright yellow border for contrast */
+}
+
+.desc h1 {
+    margin-bottom: 20px;
+    color: #ff66cc; /* Bright pink for a fun and vibrant look */
+    font-size: 2.5rem; /* Larger, eye-catching text */
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 255, 255, 0.7); /* Cool neon-like shadow for a fun effect */
+}
+
+.desc p {
+    text-align: justify;
+    color: #e0e0e0; /* Lighter grey for text readability */
+    font-weight: 400; /* Normal weight for professional look */
+    font-size: 1.2rem; /* Larger, professional text size */
+    line-height: 1.8;
+}
+
+/* Image Section */
+.img {
+    background-color: #292b2c;
+    padding: 0; /* Keep padding 0 to fit image container */
+    border-radius: 20px; /* Soft corners for a friendly look */
+    width: 30%;
+    height: auto;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.5); /* Bright shadow for focus */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #ffcc00; /* Fun, bright yellow border */
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Fun Stars Background */
+body::before {
+    content: '';
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Starry texture for a space theme */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.2; /* Subtle effect */
+}
+
+/* Add Sparkle Animation */
+@keyframes sparkle {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.desc h1 {
+    animation: sparkle 1.5s infinite ease-in-out; /* Fun sparkle animation for the title */
+}
+
+.button-container {
+    text-align: center; /* Center the button */
+    margin-top: 20px;
+}
+
+.explore-btn {
+    padding: 10px 10px;  /* Smaller padding */
+    background: linear-gradient(45deg, #1a237e, #0d47a1); /* Space-themed gradient (dark blue) */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;  /* Smaller font */
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;  /* Soft shadow */
+}
+
+.explore-btn:hover {
+    background: linear-gradient(45deg, #283593, #1565c0); /* Lighter space-themed gradient on hover */
+    transform: scale(1.05); /* Slight zoom in */
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);  /* Larger shadow on hover */
+}
+
+.explore-btn:active {
+    transform: scale(1.05); /* Slightly reduce zoom on click */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
