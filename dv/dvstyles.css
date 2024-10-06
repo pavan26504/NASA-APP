@@ -1,0 +1,60 @@
+body {
+    font-family: 'Exo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('heic1916a-jpg.webp'); /* Set your space background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Fixed background for scrolling effect */
+    color: #feebeb;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    background-color: rgba(39, 38, 38, 0.8); /* Dark semi-transparent background for better contrast */
+    border-radius: 10px;
+}
+
+h1, h2 {
+    font-family: 'Orbitron', sans-serif; /* Futuristic font for titles */
+    text-align: center;
+    color: #f5eaa8; /* Soft, cosmic-like color for headings */
+    margin-bottom: 20px;
+}
+
+.carousel-item {
+    padding: 20px;
+}
+
+.plot-info {
+    margin-top: 10px;
+    font-size: 16px; /* Slightly larger for readability */
+    line-height: 1.5;
+    color: #f5e2e2;
+    text-align: center;
+}
+
+iframe {
+    border: none;
+    border-radius: 5px;
+    height: 60vh;
+    width: 80vw; /* Adjust iframe sizes for better visibility */
+}
+
+img {
+    border-radius: 5px;
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%); /* Makes the carousel controls visible on dark background */
+}

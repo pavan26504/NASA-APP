@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoplanet Discovery Visualizations</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Exo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dvstyles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Exoplanet Discovery Visualizations</h1>
+
+        <div id="visualizationCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <h2>Histogram of Discovery Year</h2>
+                    <iframe src="histogram.html" width="100%" height="100%"></iframe>
+                    <p class="plot-info">
+                        This histogram illustrates the number of exoplanets discovered each year, highlighting trends in discovery rates over time. As technology advances and telescopes improve, we can observe a significant rise in discoveries over the last two decades. From early groundbreaking discoveries to more recent ones, this data offers a glimpse into our accelerating exploration of the universe.
+                    </p>
+                </div>
+
+                <div class="carousel-item">
+                    <h2>Scatter Plot: Orbital Period vs. Mass</h2>
+                    <iframe src="scatter_plot.html" width="100%" height="100%"></iframe>
+                    <p class="plot-info">
+                        This scatter plot shows the relationship between the orbital period and mass of exoplanets, allowing us to observe patterns in their characteristics. Some planets have massive sizes but shorter orbital periods, while others are smaller yet orbit much further from their stars. By understanding this relationship, scientists can infer the dynamic behavior of these distant worlds and hypothesize their possible compositions.
+                    </p>
+                </div>
+
+                <div class="carousel-item">
+                    <h2>Scatter Plot: Stellar Mass vs. Mass</h2>
+                    <iframe src="scatter1.html" width="100%" height="100%"></iframe>
+                    <p class="plot-info">
+                        This plot compares the stellar mass of host stars with the mass of their orbiting exoplanets, revealing insights into stellar influence on planet formation. Large stars often host massive planets, while smaller stars tend to have lower-mass planets. This relationship helps us better understand how massive stars influence planetary systems and the conditions that foster habitability.
+                    </p>
+                </div>
+
+                <div class="carousel-item">
+                    <h2>Discovery Method Pie Chart</h2>
+                    <iframe src="discovery_method_pie_chart.html" width="80vw" height="60vh"></iframe>
+                    <p class="plot-info">
+                        The pie chart displays the distribution of different discovery methods used to identify exoplanets, illustrating the most common techniques in the field. Methods such as radial velocity and transit photometry dominate, providing most of the confirmed discoveries. These methods have proven to be critical tools in reshaping our understanding of planetary systems beyond our own.
+                    </p>
+                </div>
+
+                <div class="carousel-item">
+                    <h2>Stellar Mass Scatter Plot</h2>
+                    <iframe src="stellar_mass_scatter_plot.html" width="80vw" height="60vh"></iframe>
+                    <p class="plot-info">
+                        This scatter plot visualizes the relationship between stellar mass and exoplanet mass, helping to identify correlations in their properties. These correlations provide clues about how planets form and evolve around stars of varying sizes. By studying these patterns, scientists can develop new models for how exoplanets may be distributed in the galaxy.
+                    </p>
+                </div>
+
+                <div class="carousel-item">
+                    <h2>Additional Discovery Image</h2>
+                    <img src="Discovery.png" width="80%" height="80%">
+                    <p class="plot-info">
+                        This image highlights key findings in exoplanet research, showing the vast diversity of worlds we’ve uncovered. Each discovery has revealed something unique about the universe, and as our detection techniques grow more advanced, we uncover new surprises. From hot Jupiters to potentially habitable rocky planets, the universe continues to astonish us with its complexity.
+                    </p>
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#visualizationCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#visualizationCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
